@@ -21,6 +21,7 @@ class CLI < Thor
   option :boot_disk_size, default: 10
   option :boot_disk_type, default: 'pd-standard'
   option :boot_disk_device_name, default: 'image0'
+  option :preemptible, type: :boolean, default: false
   def run_instance
     args = options.merge({
       no_restart_on_failure: nil,
